@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="Anchor" onMouseMoved="#Displayed" prefHeight="542.0" prefWidth="687.0"
+            xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AccountController">
+    <TextField fx:id="CurrentUser" alignment="CENTER" editable="false" prefHeight="109.0" prefWidth="687.0">
+        <font>
+          <Font size="18.0"/>
+        </font>
+    </TextField>
+    <Button fx:id="Exit" layoutX="488.0" layoutY="444.0" mnemonicParsing="false" onAction="#exitPressed"
+            prefHeight="83.0" prefWidth="183.0" text="CLOSE">
+        <font>
+          <Font size="36.0"/>
+        </font>
+    </Button>
+    <SplitMenuButton layoutX="393.0" layoutY="134.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="293.0"
+                     text="Select Here to Make Changes to Your Account">
+      <items>
+          <MenuItem mnemonicParsing="false" onAction="#DepositPressed" text="Make a Deposit"/>
+          <MenuItem mnemonicParsing="false" onAction="#WithdrawPressed" text="Make a Withdrawal"/>
+          <MenuItem mnemonicParsing="false" onAction="#RecentDeposit" text="View Most Recent Deposit"/>
+          <MenuItem mnemonicParsing="false" onAction="#RecentWithdrawal"
+                    text="View Most Recent Withdrawal"/>
+          <MenuItem mnemonicParsing="false" onAction="#CheckBalance" text="Check Current Balance"/>
+      </items>
+    </SplitMenuButton>
+    <Button fx:id="ViewBal" layoutX="14.0" layoutY="134.0" mnemonicParsing="false" onAction="#CheckBalance"
+            prefHeight="44.0" prefWidth="147.0" text="View Balance"/>
+    <Button fx:id="RecWithdraw" layoutX="14.0" layoutY="319.0" mnemonicParsing="false" onAction="#RecentWithdrawal"
+            prefHeight="44.0" prefWidth="147.0" text="Most Recent Withdrawal"/>
+    <Button fx:id="RecDeposit" layoutX="14.0" layoutY="227.0" mnemonicParsing="false" onAction="#RecentDeposit"
+            prefHeight="44.0" prefWidth="147.0" text="Most Recent Deposit"/>
+    <TextField fx:id="MessageDisplay" editable="false" layoutX="400.0" layoutY="382.0" prefHeight="44.0"
+               prefWidth="272.0" text="Current Balance: "/>
+</AnchorPane>

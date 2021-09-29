@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="545.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuController">
+   <Button layoutX="523.0" layoutY="458.0" mnemonicParsing="false" onAction="#ExitPressed" prefHeight="77.0" prefWidth="193.0" text="EXIT">
+      <font>
+         <Font size="36.0" />
+      </font>
+   </Button>
+   <Button layoutX="14.0" layoutY="458.0" mnemonicParsing="false" onAction="#ViewPressed" prefHeight="77.0" prefWidth="193.0" text="View File">
+      <font>
+         <Font size="36.0" />
+      </font>
+   </Button>
+   <Button layoutX="291.0" layoutY="229.0" mnemonicParsing="false" onAction="#CreateAccountPressed" prefHeight="43.0" prefWidth="208.0" text="Create Account / Register">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Button>
+   <Button fx:id="LoginBTN" layoutX="291.0" layoutY="272.0" mnemonicParsing="false" onAction="#LoginPressed" prefHeight="43.0" prefWidth="208.0" text="LOGIN">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Button>
+   <Label layoutX="14.0" layoutY="91.0" prefHeight="20.0" prefWidth="364.0" text="Administration Password (The password is &quot;password&quot;)">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+   <PasswordField fx:id="AdminLogin" layoutX="13.0" layoutY="118.0" onAction="#AdminLoginEntered" prefHeight="25.0" prefWidth="193.0" />
+   <TextField alignment="CENTER" prefHeight="63.0" prefWidth="730.0" text="Welcome to the Bank">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </TextField>
+   <TextField fx:id="Message" alignment="CENTER" layoutX="3.0" layoutY="359.0" prefHeight="63.0" prefWidth="730.0" text="Select login or register to access an account">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </TextField>
+   <Button layoutX="236.0" layoutY="458.0" mnemonicParsing="false" onAction="#LoadUsersPressed" prefHeight="77.0" prefWidth="255.0" text="LOAD USERS">
+      <font>
+         <Font size="36.0" />
+      </font>
+   </Button>
+   <Label alignment="CENTER" layoutX="236.0" layoutY="433.0" prefHeight="25.0" prefWidth="255.0" text="Get users from existing file">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+</AnchorPane>
