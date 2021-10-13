@@ -5,7 +5,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /* Charlene Creighton
- * Copyright September 29, 2021,
+ * Copyright October 13, 2021,
  * Simulation Bank Account App
  */
 

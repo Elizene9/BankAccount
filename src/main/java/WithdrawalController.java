@@ -3,7 +3,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /* Charlene Creighton
- * Copyright September 29, 2021,
+ * Copyright October 13, 2021,
  * Simulation Bank Account App
  */
 
