@@ -8,15 +8,18 @@ import javafx.stage.Stage;
  */
 
 // This class allows user to deposit money into their bank account
-public class DepositController {
+public class DepositController
+{
     public Button DoneButton;
     public TextField MessageDisplay;
     public TextField amount;
     public TextField Message;
     int check = -1;
 
-    public void Display() {
-        if (check == - 1) {
+    public void Display()
+    {
+        if (check == -1)
+        {
             String display;
             String fName;
             String lName;
@@ -25,47 +28,46 @@ public class DepositController {
             display = "Welcome, " + fName + " " + lName + ", Make changes to your account here";
 
             Message.setText(display);
-            //System.out.println(CurrentUser.getText());
             check = 0;
         }
     }
 
-    public void DepositEntered() {
+    public void DepositEntered()
+    {
         int q = BankData.curIndex;
         boolean valid = false;
         double digit = 0;
-        try {
-
+        try
+        {
             digit = Double.parseDouble(amount.getText());
             valid = true;
         }
 
-        catch(NumberFormatException e) {
-
+        catch(NumberFormatException e)
+        {
             MessageDisplay.setText("Please enter a valid numerical value");
         }
 
-        if (valid) {
-            if (digit > 0) {
+        if (valid)
+        {
+            if (digit > 0)
+            {
                 BankData.accountHolders.get(q).setBalance(digit + BankData.accountHolders.get(q).getBalance());
                 BankData.accountHolders.get(q).recentDep = digit;
                 MessageDisplay.setText("Deposit of $" + digit + " made");
             }
-            else if (digit < 0) {
+            else if (digit < 0)
                 MessageDisplay.setText("Must enter positive value");
-            }
 
-            else {
-
+            else
                 MessageDisplay.setText("Nothing Deposited");
-            }
         }
     }
 
-    public void DonePressed() {
+    public void DonePressed()
+    {
         MessageDisplay.clear();
         Stage stage = (Stage) DoneButton.getScene().getWindow();
         stage.close();
     }
-
 }

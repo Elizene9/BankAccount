@@ -11,15 +11,16 @@ import java.io.IOException;
  */
 
 // Front Page of Application
-public class Menu extends Application {
-
-    public static void main(String[] args) {
+public class Menu extends Application
+{
+    public static void main(String[] args)
+    {
         launch(args);
     }
 
     @Override
-    public void start(Stage primaryStage) throws IOException {
-
+    public void start(Stage primaryStage) throws IOException
+    {
         var scene = new Scene(new Pane());
         ChangeScenes.stageScene(scene);
 

@@ -4,8 +4,8 @@
  */
 
 // This enum allows scene switching
-public enum ViewScenes {
-
+public enum ViewScenes
+{
     // Allows scenes to be switched upon access to this class
     Menu("Menu.fxml"),
     LoginPage("LoginPage.fxml"),
@@ -17,11 +17,13 @@ public enum ViewScenes {
 
     // Get file to be opened
     public String file;
-    ViewScenes(String file) {
+    ViewScenes(String file)
+    {
         this.file = file;
     }
 
-    public String getFile() {
+    public String getFile()
+    {
         return file;
     }
 }

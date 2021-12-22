@@ -15,7 +15,8 @@ import java.io.*;
  */
 
 // Administrator's page where user info can be viewed and saved to local files
-public class AdminPageController {
+public class AdminPageController
+{
     public AnchorPane Anchor;
     Stage stage = new Stage();
     File userFile;
@@ -44,19 +45,22 @@ public class AdminPageController {
     boolean email = false, address = false, social = false;
     boolean undo = false;
 
-    public void UpdateUsers() {
-
-        if (check == 0 && BankData.accountHolders.size() != 0) {
-
+    public void UpdateUsers()
+    {
+        if (check == 0 && BankData.accountHolders.size() != 0)
+        {
             ViewUsers.getItems().clear();
-            for (int i = 0; i < BankData.accountHolders.size(); i++) {
-                String name = BankData.accountHolders.get(i).getLastName() + ", Account Number: " + BankData.accountHolders.get(i).getAccountNumber();
+            for (int i = 0; i < BankData.accountHolders.size(); i++)
+            {
+                String name = BankData.accountHolders.get(i).getLastName() + ", Account Number: "
+                        + BankData.accountHolders.get(i).getAccountNumber();
 
                 MenuItem item = new MenuItem();
 
                 item.setText(name);
                 int finalTemp = i;
-                item.setOnAction((event-> {
+                item.setOnAction((event->
+                {
                     BankData.adminIndex = finalTemp;
                     fName.setText(BankData.accountHolders.get(BankData.adminIndex).getFirstName());
                     lName.setText(BankData.accountHolders.get(BankData.adminIndex).getLastName());
@@ -67,7 +71,6 @@ public class AdminPageController {
                 }));
 
                 ViewUsers.getItems().add(item);
-
             }
 
             tempAddress = BankData.accountHolders.get(BankData.adminIndex).getAddress();
@@ -78,19 +81,20 @@ public class AdminPageController {
             oldSocial = BankData.accountHolders.get(BankData.adminIndex).getSocial();
         }
         check = 1;
-
     }
 
-    public void ViewUsersPressed() {
-
+    public void ViewUsersPressed()
+    {
         Message.setText("Hello Administrator, press edit when Account info is updated");
     }
 
-    public void EditUserPressed() {
+    public void EditUserPressed()
+    {
         Message.setText("Hello Administrator, press edit when Account info is updated");
     }
 
-    public void EditPressed() {
+    public void EditPressed()
+    {
         Message.setText("Account # " + BankData.accountHolders.get(BankData.adminIndex).getAccountNumber() + " updated");
 
         if (social)
@@ -106,8 +110,10 @@ public class AdminPageController {
         undo = false;
     }
 
-    public void UndoPressed() {
-        if (!undo) {
+    public void UndoPressed()
+    {
+        if (!undo)
+        {
             BankData.accountHolders.get(BankData.adminIndex).setSocial(oldSocial);
             BankData.accountHolders.get(BankData.adminIndex).setAddress(oldAddress);
             BankData.accountHolders.get(BankData.adminIndex).setEmailAddress(oldEmail);
@@ -118,58 +124,63 @@ public class AdminPageController {
 
         else
             Message.setText("Changes Already Undone");
-
         undo = true;
     }
 
-    public void DonePressed() throws IOException {
+    public void DonePressed() throws IOException
+    {
         ChangeScenes.Change(ViewScenes.Menu);
     }
 
-    public void newEmailPressed() {
+    public void newEmailPressed()
+    {
         Message.setText("Hello Administrator, press edit when Account info is updated");
         email = true;
         tempEmail = newEmail.getText();
     }
 
-    public void newSocialPressed() {
+    public void newSocialPressed()
+    {
         social = true;
         Message.setText("Hello Administrator, press edit when Account info is updated");
         tempSocial = Social.getText();
     }
 
-    public void newAddressPressed() {
+    public void newAddressPressed()
+    {
         address = true;
         Message.setText("Hello Administrator, press edit when Account info is updated");
         tempAddress = NewAddress.getText();
     }
 
-    public void SaveUsersPressed() throws IOException {
-        
+    public void SaveUsersPressed() throws IOException
+    {
         dir.getExtensionFilters().clear();
             dir.getExtensionFilters().add(
                     new FileChooser.ExtensionFilter("Text Files", "*.txt"));
 
-
         userFile = dir.showSaveDialog(stage);
             writer = new PrintWriter(userFile);
 
-            for (int i = 0; i < BankData.accountHolders.size(); i++) {
+            if (userFile.exists())
+            {
+                for (int i = 0; i < BankData.accountHolders.size(); i++)
+                {
 
-                writer.write("User #" + (i + 1) + ": Information:\n");
-                writer.write("----------------------------\n");
-                writer.write("Account#: " + BankData.accountHolders.get(i).getAccountNumber());
-                writer.write("\nName: " + BankData.accountHolders.get(i).getFirstName() + " " + BankData.accountHolders.get(i).getLastName());
-                writer.write("\nUsername: " + BankData.accountHolders.get(i).getUserName());
-                writer.write("\nPassword: " + BankData.accountHolders.get(i).getPassWord());
-                writer.write("\nSocial: " + BankData.accountHolders.get(i).getSocial());
+                    writer.write("User #" + (i + 1) + ": Information:\n");
+                    writer.write("----------------------------\n");
+                    writer.write("Account#: " + BankData.accountHolders.get(i).getAccountNumber());
+                    writer.write("\nName: " + BankData.accountHolders.get(i).getFirstName() + " " + BankData.accountHolders.get(i).getLastName());
+                    writer.write("\nUsername: " + BankData.accountHolders.get(i).getUserName());
+                    writer.write("\nPassword: " + BankData.accountHolders.get(i).getPassWord());
+                    writer.write("\nSocial: " + BankData.accountHolders.get(i).getSocial());
 
-                writer.write("\nEmail: " + BankData.accountHolders.get(i).getEmailAddress());
-                writer.write("\nAddress: " + BankData.accountHolders.get(i).getAddress());
-                writer.write("\nBalance: " + BankData.accountHolders.get(i).getBalance());
-                writer.write("\n\n");
+                    writer.write("\nEmail: " + BankData.accountHolders.get(i).getEmailAddress());
+                    writer.write("\nAddress: " + BankData.accountHolders.get(i).getAddress());
+                    writer.write("\nBalance: " + BankData.accountHolders.get(i).getBalance());
+                    writer.write("\n\n");
+                }
+                writer.close();
             }
-            writer.close();
-        }
-
+    }
 }

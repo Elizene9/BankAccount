@@ -7,8 +7,8 @@ import java.util.List;
  */
 
 // This class stores the list of users and the index of the current user accessing the app
-public class BankData {
-
+public class BankData
+{
     public static int curIndex;
     public static int adminIndex;
     public static List<Users> accountHolders = new ArrayList<>();

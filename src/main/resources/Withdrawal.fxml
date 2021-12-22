@@ -9,7 +9,7 @@
             xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="WithdrawalController">
     <TextField fx:id="MessageDisplay" layoutY="170.0" prefHeight="59.0" prefWidth="602.0"
-               text="Enter whole number amount you would like to deposit below">
+               text="Enter whole number amount you would like to withdraw below">
         <font>
             <Font size="18.0"/>
         </font>

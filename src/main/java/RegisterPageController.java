@@ -11,7 +11,8 @@ import java.util.Random;
  */
 
 // This class allows user to register for an account in app
-public class RegisterPageController {
+public class RegisterPageController
+{
     public TextField messageDisplay;
     public TextField fName;
     public TextField EmailAddress;
@@ -28,7 +29,8 @@ public class RegisterPageController {
     int passwordCheck;
     int socialCheck;
 
-    public void Social1Entered() {
+    public void Social1Entered()
+    {
         if (Social1.getText().equals(Social2.getText()))
             socialCheck = 1;
 
@@ -37,7 +39,8 @@ public class RegisterPageController {
 
     }
 
-    public void Social2Entered() {
+    public void Social2Entered()
+    {
         if (Social1.getText().equals(Social2.getText()))
             socialCheck = 1;
 
@@ -45,8 +48,8 @@ public class RegisterPageController {
             socialCheck = -1;
     }
 
-    public void password1Entered() {
-
+    public void password1Entered()
+    {
         if (password1.getText().equals(password2.getText()))
             passwordCheck = 1;
 
@@ -54,8 +57,8 @@ public class RegisterPageController {
             passwordCheck = -1;
     }
 
-    public void password2Entered() {
-
+    public void password2Entered()
+    {
         if (password1.getText().equals(password2.getText()))
             passwordCheck = 1;
 
@@ -63,16 +66,15 @@ public class RegisterPageController {
             passwordCheck = -1;
     }
 
-    public void RegisterConfirmed() {
+    public void RegisterConfirmed()
+    {
         messageDisplay.setText("Please Enter Account Information");
         StringBuilder account = new StringBuilder();
         Random rand = new Random();
-        if (passwordCheck == 1 && socialCheck == 1) {
-
-            for (int i = 0; i < 9; i++) {
-
+        if (passwordCheck == 1 && socialCheck == 1)
+        {
+            for (int i = 0; i < 9; i++)
                 account.append(rand.nextInt(10));
-            }
 
             call.setFirstName(fName.getText());
             call.setLastName(LName.getText());
@@ -87,22 +89,18 @@ public class RegisterPageController {
             messageDisplay.setText("Account Registered");
         }
 
-        else if (passwordCheck == 1) {
-
+        else if (passwordCheck == 1)
             messageDisplay.setText("Social Security Numbers do not match");
-        }
 
-        else if (socialCheck == 1) {
-
+        else if (socialCheck == 1)
             messageDisplay.setText("Passwords do not match");
-        }
 
         else
             messageDisplay.setText("Social Security Numbers do not match\nPasswords do not match");
-
     }
 
-    public void ClosePressed() {
+    public void ClosePressed()
+    {
         Stage stage = (Stage) Close.getScene().getWindow();
         stage.close();
     }

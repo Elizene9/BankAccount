@@ -4,8 +4,8 @@
  */
 
 // This class holds the user's account information
-public class Users {
-
+public class Users
+{
     private String firstName;
     private String lastName;
     private String social;
@@ -18,75 +18,93 @@ public class Users {
     public double recentWith;
     private double balance;
 
-    public String getAddress() {
+    public String getAddress()
+    {
         return address;
     }
 
-    public String getEmailAddress() {
+    public String getEmailAddress()
+    {
         return emailAddress;
     }
 
-    public String getFirstName() {
+    public String getFirstName()
+    {
         return firstName;
     }
 
-    public String getLastName() {
+    public String getLastName()
+    {
         return lastName;
     }
 
-    public String getPassWord() {
+    public String getPassWord()
+    {
         return passWord;
     }
 
-    public String getSocial() {
+    public String getSocial()
+    {
         return social;
     }
 
-    public String getUserName() {
+    public String getUserName()
+    {
         return userName;
     }
 
-    public void setAddress(String Address) {
+    public void setAddress(String Address)
+    {
         address = Address;
     }
 
-    public void setEmailAddress(String EmailAddress) {
+    public void setEmailAddress(String EmailAddress)
+    {
         emailAddress = EmailAddress;
     }
 
-    public void setFirstName(String FirstName) {
+    public void setFirstName(String FirstName)
+    {
         firstName = FirstName;
     }
 
-    public void setLastName(String LastName) {
+    public void setLastName(String LastName)
+    {
         lastName = LastName;
     }
 
-    public void setPassWord(String PassWord) {
+    public void setPassWord(String PassWord)
+    {
         passWord = PassWord;
     }
 
-    public void setSocial(String Social) {
+    public void setSocial(String Social)
+    {
         this.social = Social;
     }
 
-    public void setUserName(String UserName) {
+    public void setUserName(String UserName)
+    {
         userName = UserName;
     }
 
-    public String getAccountNumber() {
+    public String getAccountNumber()
+    {
         return AccountNumber;
     }
 
-    public void setAccountNumber(String accountNumber) {
+    public void setAccountNumber(String accountNumber)
+    {
         AccountNumber = accountNumber;
     }
 
-    public double getBalance() {
+    public double getBalance()
+    {
         return balance;
     }
 
-    public void setBalance(double Balance) {
+    public void setBalance(double Balance)
+    {
         balance = Balance;
     }
 }
